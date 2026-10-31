@@ -1,0 +1,276 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | SVU Events</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- ملف التنسيق الخاص بالمشروع -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                SVU Events
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="فتح القائمة"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">الفعاليات</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">عن المشروع</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">
+                            تواصل معنا
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- مقدمة الصفحة -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold text-primary">
+                تواصل معنا
+            </h1>
+
+            <p class="lead mt-3">
+                لديك سؤال أو اقتراح؟ يسعدنا استقبال رسالتك.
+            </p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+
+        <div class="row g-4">
+
+            <!-- نموذج التواصل -->
+            <div class="col-lg-7">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+
+                        <h2 class="h4 text-primary mb-4">
+                            أرسل لنا رسالة
+                        </h2>
+
+                        <!-- تظهر رسالة النجاح أو الخطأ هنا -->
+                        <div
+                            id="contactAlert"
+                            class="alert d-none"
+                            role="alert"
+                            aria-live="polite">
+                        </div>
+
+                        <form id="contactForm" novalidate>
+
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">
+                                    الاسم الكامل
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="contactName"
+                                    name="name"
+                                    placeholder="أدخل اسمك الكامل"
+                                    required
+                                    minlength="3"
+                                >
+
+                                <div class="invalid-feedback">
+                                    يرجى إدخال اسم صحيح يتكون من ثلاثة أحرف على الأقل.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">
+                                    البريد الإلكتروني
+                                </label>
+
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="contactEmail"
+                                    name="email"
+                                    placeholder="example@email.com"
+                                    required
+                                >
+
+                                <div class="invalid-feedback">
+                                    يرجى إدخال بريد إلكتروني صحيح.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">
+                                    موضوع الرسالة
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="contactSubject"
+                                    name="subject"
+                                    required
+                                >
+                                    <option value="">اختر موضوع الرسالة</option>
+                                    <option value="استفسار">استفسار عام</option>
+                                    <option value="اقتراح">اقتراح</option>
+                                    <option value="مشكلة">الإبلاغ عن مشكلة</option>
+                                    <option value="فعالية">استفسار عن فعالية</option>
+                                </select>
+
+                                <div class="invalid-feedback">
+                                    يرجى اختيار موضوع الرسالة.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">
+                                    نص الرسالة
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    id="contactMessage"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="اكتب رسالتك هنا..."
+                                    required
+                                    minlength="10"
+                                ></textarea>
+
+                                <div class="invalid-feedback">
+                                    يرجى كتابة رسالة من عشرة أحرف على الأقل.
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                إرسال الرسالة
+                            </button>
+
+                            <button type="reset" class="btn btn-outline-secondary">
+                                مسح الحقول
+                            </button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- معلومات التواصل -->
+            <div class="col-lg-5">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body p-4">
+
+                        <h2 class="h4 text-primary mb-3">
+                            معلومات التواصل
+                        </h2>
+
+                        <p>
+                            يمكنك استخدام هذه الصفحة لإرسال الاستفسارات
+                            والاقتراحات المتعلقة بمشروع SVU Events.
+                        </p>
+
+                        <hr>
+
+                        <h3 class="h6 fw-bold">اسم المشروع</h3>
+                        <p>SVU Events</p>
+
+                        <h3 class="h6 fw-bold">نوع المشروع</h3>
+                        <p>مشروع تعليمي لتطبيق مفاهيم تطوير الويب.</p>
+
+                        <h3 class="h6 fw-bold">الصفحات المتاحة</h3>
+                        <ul>
+                            <li>الرئيسية.</li>
+                            <li>دليل الفعاليات.</li>
+                            <li>تفاصيل الفعالية.</li>
+                            <li>عن المشروع.</li>
+                            <li>تواصل معنا.</li>
+                        </ul>
+
+                        <div class="alert alert-info mt-4 mb-0" role="alert">
+                            ملاحظة: نموذج التواصل في هذه النسخة تجريبي؛
+                            يتحقق من الحقول ويعرض رسالة للمستخدم، لكنه
+                            لا يرسل الرسائل إلى بريد إلكتروني أو خادم فعلي.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- العودة إلى الصفحة الرئيسية -->
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn btn-outline-primary">
+                العودة إلى الرئيسية
+            </a>
+        </div>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-2">
+                SVU Events - دليل الفعاليات الجامعية
+            </p>
+
+            <a href="index.html" class="footer-link">الرئيسية</a>
+            <a href="events.html" class="footer-link">الفعاليات</a>
+            <a href="about.html" class="footer-link">عن المشروع</a>
+            <a href="contact.html" class="footer-link">تواصل معنا</a>
+
+            <p class="mt-3 mb-0">
+                جميع الحقوق محفوظة © 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ملف JavaScript الخاص بالمشروع -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
+```
