@@ -1,0 +1,66 @@
+
+/* التنسيق العام للموقع */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    background-color: #ffffff;
+    padding-top: 50px;
+}
+
+/* الواجهة الرئيسية */
+.hero-section {
+    background-color: #f0f5ff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* صور الفعاليات */
+.event-image {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* عناوين الأقسام */
+.section-title {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* بطاقات أعضاء الفريق */
+.team-member {
+    background-color: #ffffff;
+    transition: transform 0.2s;
+}
+
+.team-member:hover {
+    transform: translateY(-4px);
+}
+
+/* روابط التذييل */
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* تحسين العرض على الهواتف */
+@media (max-width: 576px) {
+    .hero-section {
+        text-align: center;
+    }
+
+    .event-image {
+        height: 200px;
+    }
+}
+
+/* صورة صفحة تفاصيل الفعالية */
+.event-detail-image {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+}
